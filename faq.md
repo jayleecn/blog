@@ -1,3 +1,8 @@
+---
+layout: default
+title: 常见问题
+---
+
 ## ChatBar 有什么特色？
 
 - **极简**：市面上有很多优秀的 ChatGPT 桌面客户端，比如：[OpenCat](https://apps.apple.com/app/opencat/id6445999201)、[Sider](https://apps.apple.com/us/app/sider-ai-sidekick/id6446394143)、[ChatBox](https://chatboxapp.xyz/) 等，但它们对不大懂技术的人来说，上手多少有点难度，所以我们尝试专为**办公室白领**打造一款“**免费上手，开箱即用**”的AI助理。
