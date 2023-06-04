@@ -77,31 +77,29 @@ gem 'jekyll', '~> 4.2.0'
 
 现在你已经准备好部署你的站点到Cloudflare Pages了。
 
-1. 登录到你的Cloudflare账户，然后选择"Pages"。
+1. 登录到你的Cloudflare账户，然后选择"Workers & Pages"。
 
-2. 点击"Create a project"，然后选择你刚刚创建的Github仓库。
+2. 点击"Create a project"，选“Pages”，然后选择你链接到刚刚创建的Github仓库。
 
 3. 在下一步，你需要设置Cloudflare Pages的构建设置。
 - Framework preset：选择 `Jekyll`
 - Build command：输入 `bundle install && bundle exec jekyll build`
 - 其他：都用默认值即可
 
-4. 点击"Begin setup"，然后在下一页，点击"Save and Deploy"。
+4. 然后在下一页，点击"Save and Deploy"。
 
 5. Cloudflare会开始构建和部署你的项目。构建完成后，你的站点将会被部署到一个*.pages.dev的子域名上。
 
 请注意，每次你在Github上提交新的更改，Cloudflare Pages都会自动重新构建和部署你的站点。如果你需要一个自定义的域名，你可以在Cloudflare Pages的设置中添加一个。
 
-至此，大功告成。
+至此，大功告成。比如：本篇md文档，部署到Cloudflare后，可以通过：[https://blog-dhw.pages.dev/github_md_to_cloudflare_html.html](https://blog-dhw.pages.dev/github_md_to_cloudflare_html.html) 来访问
 
-比如，本篇md文档，部署到Cloudflare后，可以通过：Cloudflare 来访问
+不想了解原理的化，前4个步骤，可以直接fork我的这个仓库来完成：[https://github.com/jayleecn/blog](https://github.com/jayleecn/blog)
 
-#### You:
-Gemfile 有后缀吗？
+fork好了后，直接进入第5步即可。
 
-#### ChatGPT:
-`Gemfile` 是没有后缀的。它是一个纯文本文件，用于列出 Ruby 应用程序的 gem 依赖关系。Ruby 的 gem 是类似于库或包的可复用组件，用于扩展 Ruby 应用程序的功能。`Gemfile` 通常位于项目的根目录中，并由 Bundler（一个 Ruby 依赖管理工具）使用。
+#### 常见问题
 
-在这个 `Gemfile` 中，你可以指定你的应用程序依赖哪些 gem，以及这些 gem 的版本。当你运行 `bundle install` 命令时，Bundler 会查看 `Gemfile`，并安装列出的所有 gem 及其依赖关系。
+**问：构建出来的 *.pages.dev 为何没法访问？**
 
-所以，你应该在你的项目根目录下创建一个名为 `Gemfile` 的文件，不需要任何后缀。在这个 `Gemfile` 中，你可以指定要使用的 Jekyll 的版本，如我之前所示的那样。
+**答**：域名可能被污染，需要科学上网。若希望正常可以访问，可以绑定个自己的域名上去。没域名的化，Cloudflare可以直接注册。通过Cloudflare注册或已经把域名解析改到Cloudflare的域名，绑定时会自动配置DNS，很方便。
